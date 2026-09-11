@@ -1,0 +1,12 @@
+Cervical Cancer Risk Classification
+Predicting cervical cancer risk from patient-level clinical and behavioral risk factors, using the UCI Cervical Cancer (Risk Factors) dataset. Part 1 of a two-part project connecting individual-level risk prediction (this notebook) with population-level screening access in Nepal (Part 2, in progress).
+Dataset
+Source: UCI Machine Learning Repository — Cervical Cancer (Risk Factors)
+858 patient records, 36 attributes covering demographics, habits (smoking), reproductive/sexual history, STD history, and 4 diagnostic test outcomes (Hinselmann, Schiller, Citology, Biopsy)
+Target variable: Biopsy (0 = negative, 1 = positive) — the most clinically definitive of the four test outcomes
+
+Approach
+Preprocessing — converted mixed-type columns to numeric, imputed missing values (mode for binary columns, mean for continuous columns), computed after the train/test split to avoid leakage
+EDA — class imbalance check, age distribution by diagnosis, feature correlation heatmap, risk factor prevalence comparison (positive vs. negative cases)
+Modeling — Logistic Regression and Random Forest, both with class_weight="balanced" to address severe class imbalance (~15:1 negative:positive)
+Evaluation — precision/recall/F1, ROC-AUC, 5-fold cross-validation, and threshold tuning (favoring recall, since missing a true positive is the costlier error in a screening context)
