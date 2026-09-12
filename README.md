@@ -42,7 +42,5 @@ cervical-risk-classification/
 ├── 01_uci_risk_model.ipynb
 ├── data/
 │   └── risk_factors_cervical_cancer.csv/
-├── figures/
-├── requirements.txt
 └── README.md
 
